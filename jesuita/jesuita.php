@@ -63,7 +63,32 @@ class Jesuita {
     
         $conn->close();
     
-        return $resulto;
+        return $resultado;
+    }
+
+    public function modificar($idJesuita, $nuevoNombre, $nuevaFirma) {
+        $conn = $this->db->connect();
+
+        // Verificar si el Jesuita con el ID dado existe
+        $consultaExistencia = "SELECT idJesuita FROM jesuita WHERE idJesuita = '$idJesuita'";
+        $resultadoExistencia = $conn->query($consultaExistencia);
+
+        if ($resultadoExistencia->num_rows === 0) {
+            $conn->close();
+            return "No existe un Jesuita con el ID $idJesuita.";
+        }
+
+        // El Jesuita existe, procede con la modificación
+        $consultaModificar = "UPDATE jesuita SET nombre = '$nuevoNombre', firma = '$nuevaFirma' WHERE idJesuita = '$idJesuita'";
+        $resultadoModificar = $conn->query($consultaModificar);
+
+        $conn->close();
+
+        if ($resultadoModificar) {
+            return "Jesuita modificado con éxito.";
+        } else {
+            return "Error al modificar el Jesuita.";
+        }
     }
 
 }

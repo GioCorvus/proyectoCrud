@@ -29,6 +29,6 @@ $datos = $jesuita->leer();
         <?php endforeach; ?>
     </table>
     <br>
-    <a href="index.html">Volver</a>
+    <a href="jesuita.html">Volver</a>
 </body>
 </html>

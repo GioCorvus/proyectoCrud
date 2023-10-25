@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Agregar">
     </form>
     <br>
-    <a href="index.html">Volver</a>
+    <a href="jesuita.html">Volver</a>
 </body>
 </html>
 

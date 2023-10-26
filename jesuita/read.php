@@ -1,8 +1,8 @@
 <?php
-require_once 'Jesuita.php';
+    require_once '../clases/Jesuita.php';
 
-$jesuita = new Jesuita();
-$datos = $jesuita->leer();
+    $jesuita = new Jesuita();
+    $datos = $jesuita->leer();
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +11,7 @@ $datos = $jesuita->leer();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Jesuitas</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
     <h1>Ver Jesuitas</h1>

@@ -1,8 +1,8 @@
 <?php
-require_once 'Lugar.php';
+    require_once '../clases/Lugar.php';
 
-$objeto = new Lugar();
-$datos = $objeto->leer();
+    $objeto = new Lugar();
+    $datos = $objeto->leer();
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +11,8 @@ $datos = $objeto->leer();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Lugares</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+
 </head>
 <body>
     <h1>Ver Lugares</h1>
@@ -32,3 +34,4 @@ $datos = $objeto->leer();
     <a href="lugar.html">Volver</a>
 </body>
 </html>
+

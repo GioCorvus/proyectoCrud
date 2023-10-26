@@ -1,16 +1,4 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require_once 'Jesuita.php';
 
-    $idJesuita = $_POST["idJesuita"];
-    $nombre = $_POST["nombre"];
-    $firma = $_POST["firma"];
-
-    $jesuita = new Jesuita();
-    $jesuita->insertar($idJesuita,$nombre, $firma);
-
-}
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -18,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Jesuita</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
     <h1>Agregar Jesuita</h1>
@@ -31,6 +20,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Agregar">
     </form>
     <br>
+    <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            require_once '../clases/Jesuita.php';
+
+            $idJesuita = $_POST["idJesuita"];
+            $nombre = $_POST["nombre"];
+            $firma = $_POST["firma"];
+
+            $jesuita = new Jesuita();
+            $jesuita->insertar($idJesuita,$nombre, $firma);
+
+        }
+    ?>
     <a href="jesuita.html">Volver</a>
 </body>
 </html>

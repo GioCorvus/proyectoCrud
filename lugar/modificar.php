@@ -1,17 +1,4 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require_once 'Lugar.php';
 
-    $ip = $_POST["ip"];
-    $lugar = $_POST["lugar"];
-    $descripcion = $_POST["descripcion"];
-
-    $objeto = new Lugar();
-    $mensajeModificar = $objeto->modificar($ip, $lugar, $descripcion);
-
-    echo $mensajeModificar; 
-}
-?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -19,6 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Lugar</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+
 </head>
 <body>
     <h1>Modificar Lugar</h1>
@@ -32,6 +21,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Modificar">
     </form>
     <br>
+    <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            require_once '../clases/Lugar.php';
+
+            $ip = $_POST["ip"];
+            $lugar = $_POST["lugar"];
+            $descripcion = $_POST["descripcion"];
+
+            $objeto = new Lugar();
+            $mensajeModificar = $objeto->modificar($ip, $lugar, $descripcion);
+
+            echo $mensajeModificar; 
+        }
+    ?>
     <a href="lugar.html">Volver</a>
 </body>
 </html>
